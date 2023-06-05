@@ -1,0 +1,21 @@
+@import url('~dmn-js/dist/assets/diagram-js.css');
+@import url('~dmn-js/dist/assets/dmn-js-shared.css');
+@import url('~dmn-js/dist/assets/dmn-font/css/dmn-embedded.css');
+@import url('~dmn-js/dist/assets/dmn-js-drd.css');
+@import url('~dmn-js/dist/assets/dmn-js-decision-table.css');
+@import url('~dmn-js/dist/assets/dmn-js-decision-table-controls.css');
+@import url('~dmn-js/dist/assets/dmn-js-literal-expression.css');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.test-container {
+  height: 500px;
+}
+
+.test-container:only-of-type {
+  height: 100%;
+}
