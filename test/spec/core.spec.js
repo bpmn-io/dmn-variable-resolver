@@ -25,7 +25,7 @@ describe('#resolveVariables', function() {
   });
 
 
-  it.only('should resolve required decision outputs', async function() {
+  it('should resolve required decision outputs', async function() {
 
     // given
     const parsed = await parse(RequiredDecisionDmn);

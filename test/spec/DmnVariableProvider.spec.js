@@ -53,7 +53,7 @@ describe('DmnVariableProvider', function() {
   });
 
 
-  it('should provide variables from input data', async function() {
+  (singleStart ? it.only : it)('should provide variables from input data', async function() {
 
     // given
     await editor.importXML(SimpleDmn);
