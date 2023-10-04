@@ -25,7 +25,7 @@ describe('#resolveVariables', function() {
   });
 
 
-  it('should resolve required decision outputs', async function() {
+  it('should resolve required decision outputs with types', async function() {
 
     // given
     const parsed = await parse(RequiredDecisionDmn);
@@ -40,10 +40,12 @@ describe('#resolveVariables', function() {
         name: 'Required Decision',
         entries: [
           {
-            name: 'first'
+            name: 'first',
+            type: 'string'
           },
           {
-            name: 'second'
+            name: 'second',
+            type: 'boolean'
           }
         ]
       }
