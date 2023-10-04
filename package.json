@@ -1,6 +1,6 @@
 {
   "name": "@bpmn-io/dmn-variable-resolver",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "dmn-js plugin for resolving available variables",
   "main": "lib/index.js",
   "scripts": {
