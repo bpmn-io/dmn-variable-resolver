@@ -17,6 +17,6 @@ jobs:
         env:
           COVERAGE: 1
           TEST_BROWSERS: ChromeHeadless
-        run: xvfb-run npm run test
+        run: xvfb-run npm run all
       - name: Upload Coverage
         uses: codecov/codecov-action@v3
