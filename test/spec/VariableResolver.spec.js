@@ -6,7 +6,7 @@ import SimpleDmn from '../fixtures/simple.dmn';
 
 import { singleStart } from '../TestHelper';
 
-describe('DmnVariableProvider', function() {
+describe('VariableResolver', function() {
 
 
   let container;
