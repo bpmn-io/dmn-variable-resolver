@@ -2,6 +2,13 @@
 
 All notable changes to [@bpmn-io/dmn-variable-resolver](https://github.com/bpmn-io/dmn-variable-resolver) are documented here. We use [semantic versioning](http://semver.org/) for releases.
 
+## [0.2.1](https://github.com/bpmn-io/dmn-variable-resolver/compare/v0.2.0...v0.2.1) (2023-10-05)
+
+
+### Bug Fixes
+
+* provide type as `detail` ([4186bd3](https://github.com/bpmn-io/dmn-variable-resolver/commit/4186bd3016d78ba35cfabbeb2f238fa911ccf0ec))
+
 ## [0.2.0](https://github.com/bpmn-io/dmn-variable-resolver/compare/v0.1.0...v0.2.0) (2023-10-04)
 
 
