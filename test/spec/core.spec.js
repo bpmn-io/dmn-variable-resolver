@@ -51,4 +51,23 @@ describe('#resolveVariables', function() {
       }
     ]);
   });
+
+
+  it('should resolve required decision outputs with types', async function() {
+
+    // given
+    const parsed = await parse(RequiredDecisionDmn);
+    const element = findElementById(parsed, 'LiteralExpression_1');
+
+    // when
+    const variables = resolveVariables(element);
+
+    // then
+    expect(variables).to.eql([
+      {
+        name: 'Single output',
+        detail: 'string'
+      }
+    ]);
+  });
 });
