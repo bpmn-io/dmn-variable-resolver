@@ -41,11 +41,11 @@ describe('#resolveVariables', function() {
         entries: [
           {
             name: 'first',
-            type: 'string'
+            detail: 'string'
           },
           {
             name: 'second',
-            type: 'boolean'
+            detail: 'boolean'
           }
         ]
       }
