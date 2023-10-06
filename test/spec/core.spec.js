@@ -3,6 +3,7 @@ import { parse, findElementById } from '../TestHelper';
 import SimpleDmn from '../fixtures/simple.dmn';
 import RequiredDecisionDmn from '../fixtures/required-decision.dmn';
 import RequiredKnowledgeDmn from '../fixtures/required-knowledge.dmn';
+import MissingNamesDmn from '../fixtures/missing-names.dmn';
 
 import { resolveVariables } from '../../lib';
 
@@ -86,6 +87,34 @@ describe('#resolveVariables', function() {
     expect(variables).to.eql([
       {
         name: 'Business Knowledge Model'
+      }
+    ]);
+  });
+
+
+  it('should NOT provide variables without names', async function() {
+
+    // given
+    const parsed = await parse(MissingNamesDmn);
+    const element = findElementById(parsed, 'Decision_1');
+
+    // when
+    const variables = resolveVariables(element);
+
+    // then
+    expect(variables).to.be.eql([
+      {
+        'name': 'One of many outputs without name',
+        'entries': [
+          {
+            'name': 'named',
+            'detail': 'string'
+          }
+        ]
+      },
+      {
+        'name': 'Single unnamed output',
+        'detail': 'string'
       }
     ]);
   });
