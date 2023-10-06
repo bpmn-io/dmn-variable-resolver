@@ -2,6 +2,7 @@ import { parse, findElementById } from '../TestHelper';
 
 import SimpleDmn from '../fixtures/simple.dmn';
 import RequiredDecisionDmn from '../fixtures/required-decision.dmn';
+import RequiredKnowledgeDmn from '../fixtures/required-knowledge.dmn';
 
 import { resolveVariables } from '../../lib';
 
@@ -67,6 +68,24 @@ describe('#resolveVariables', function() {
       {
         name: 'Single output',
         detail: 'string'
+      }
+    ]);
+  });
+
+
+  it('should resolve required knowledge to BKM', async function() {
+
+    // given
+    const parsed = await parse(RequiredKnowledgeDmn);
+    const element = findElementById(parsed, 'Decision_1');
+
+    // when
+    const variables = resolveVariables(element);
+
+    // then
+    expect(variables).to.eql([
+      {
+        name: 'Business Knowledge Model'
       }
     ]);
   });
