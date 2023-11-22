@@ -68,7 +68,8 @@ describe('VariableResolver', function() {
     // then
     expect(variables).to.eql([
       {
-        name: 'Season'
+        name: 'Season',
+        origin: getBusinessObject(elementRegistry.get('InputData_0wfh4a3'))
       }
     ]);
   });

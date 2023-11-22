@@ -13,7 +13,8 @@ describe('#resolveVariables', function() {
 
     // given
     const parsed = await parse(SimpleDmn);
-    const element = findElementById(parsed, 'InputExpression_1');
+    const element = findElementById(parsed, 'InputExpression_1'),
+          inputData = findElementById(parsed, 'InputData_0wfh4a3');
 
     // when
     const variables = resolveVariables(element);
@@ -21,7 +22,8 @@ describe('#resolveVariables', function() {
     // then
     expect(variables).to.eql([
       {
-        name: 'Season'
+        name: 'Season',
+        origin: inputData
       }
     ]);
   });
@@ -31,7 +33,8 @@ describe('#resolveVariables', function() {
 
     // given
     const parsed = await parse(RequiredDecisionDmn);
-    const element = findElementById(parsed, 'InputExpression_1');
+    const element = findElementById(parsed, 'InputExpression_1'),
+          decision = findElementById(parsed, 'Decision_02osojf');
 
     // when
     const variables = resolveVariables(element);
@@ -49,7 +52,8 @@ describe('#resolveVariables', function() {
             name: 'second',
             detail: 'boolean'
           }
-        ]
+        ],
+        origin: decision
       }
     ]);
   });
@@ -59,7 +63,8 @@ describe('#resolveVariables', function() {
 
     // given
     const parsed = await parse(RequiredDecisionDmn);
-    const element = findElementById(parsed, 'LiteralExpression_1');
+    const element = findElementById(parsed, 'LiteralExpression_1'),
+          origin = findElementById(parsed, 'SingleOutput');
 
     // when
     const variables = resolveVariables(element);
@@ -68,7 +73,8 @@ describe('#resolveVariables', function() {
     expect(variables).to.eql([
       {
         name: 'Single output',
-        detail: 'string'
+        detail: 'string',
+        origin
       }
     ]);
   });
@@ -78,7 +84,8 @@ describe('#resolveVariables', function() {
 
     // given
     const parsed = await parse(RequiredKnowledgeDmn);
-    const element = findElementById(parsed, 'Decision_1');
+    const element = findElementById(parsed, 'Decision_1'),
+          origin = findElementById(parsed, 'BusinessKnowledgeModel_1yhkda1');
 
     // when
     const variables = resolveVariables(element);
@@ -86,7 +93,8 @@ describe('#resolveVariables', function() {
     // then
     expect(variables).to.eql([
       {
-        name: 'Business Knowledge Model'
+        name: 'Business Knowledge Model',
+        origin
       }
     ]);
   });
@@ -110,11 +118,13 @@ describe('#resolveVariables', function() {
             'name': 'named',
             'detail': 'string'
           }
-        ]
+        ],
+        origin: findElementById(parsed, 'Decision_1ewlmt0')
       },
       {
         'name': 'Single unnamed output',
-        'detail': 'string'
+        'detail': 'string',
+        origin: findElementById(parsed, 'Decision_0k841j8')
       }
     ]);
   });
