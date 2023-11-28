@@ -2,6 +2,13 @@
 
 All notable changes to [@bpmn-io/dmn-variable-resolver](https://github.com/bpmn-io/dmn-variable-resolver) are documented here. We use [semantic versioning](http://semver.org/) for releases.
 
+## [0.4.0](https://github.com/bpmn-io/dmn-variable-resolver/compare/v0.3.1...v0.4.0) (2023-11-28)
+
+
+### Features
+
+* provide `origin` as element defining variable ([9ffaa7a](https://github.com/bpmn-io/dmn-variable-resolver/commit/9ffaa7a78e132c9e9172a892d3c2530495a69e86))
+
 ## [0.3.1](https://github.com/bpmn-io/dmn-variable-resolver/compare/v0.3.0...v0.3.1) (2023-10-06)
 
 
