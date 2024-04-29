@@ -4,6 +4,7 @@ import SimpleDmn from '../fixtures/simple.dmn';
 import RequiredDecisionDmn from '../fixtures/required-decision.dmn';
 import RequiredKnowledgeDmn from '../fixtures/required-knowledge.dmn';
 import MissingNamesDmn from '../fixtures/missing-names.dmn';
+import FunctionDefinitionDmn from '../fixtures/function-definition.dmn';
 
 import { resolveVariables } from '../../lib';
 
@@ -125,6 +126,38 @@ describe('#resolveVariables', function() {
         'name': 'Single unnamed output',
         'detail': 'string',
         origin: findElementById(parsed, 'Decision_0k841j8')
+      }
+    ]);
+  });
+
+
+  it('should resolve formal parameters of function definition', async function() {
+
+    // given
+    const parsed = await parse(FunctionDefinitionDmn);
+    const element = findElementById(parsed, 'Bkm_1'),
+          fn = element.get('encapsulatedLogic'),
+          parameters = fn.get('formalParameter'),
+          functionBody = fn.get('body');
+
+    // when
+    const variables = resolveVariables(functionBody);
+
+    // then
+    expect(variables).to.eql([
+      {
+        name: 'noType',
+        origin: parameters[0]
+      },
+      {
+        name: 'string',
+        detail: 'string',
+        origin: parameters[1]
+      },
+      {
+        name: 'num',
+        detail: 'number',
+        origin: parameters[2]
       }
     ]);
   });
