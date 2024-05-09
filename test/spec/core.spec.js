@@ -81,12 +81,12 @@ describe('#resolveVariables', function() {
   });
 
 
-  it('should resolve required knowledge to BKM', async function() {
+  it('should resolve required knowledge from Decision to BKM', async function() {
 
     // given
     const parsed = await parse(RequiredKnowledgeDmn);
     const element = findElementById(parsed, 'Decision_1'),
-          origin = findElementById(parsed, 'BusinessKnowledgeModel_1yhkda1');
+          origin = findElementById(parsed, 'BKM_1');
 
     // when
     const variables = resolveVariables(element);
@@ -95,6 +95,26 @@ describe('#resolveVariables', function() {
     expect(variables).to.eql([
       {
         name: 'Business Knowledge Model',
+        origin
+      }
+    ]);
+  });
+
+
+  it('should resolve required knowledge from BKM to BKM', async function() {
+
+    // given
+    const parsed = await parse(RequiredKnowledgeDmn);
+    const element = findElementById(parsed, 'BKM_1'),
+          origin = findElementById(parsed, 'BKM_2');
+
+    // when
+    const variables = resolveVariables(element);
+
+    // then
+    expect(variables).to.eql([
+      {
+        name: 'BKM_2',
         origin
       }
     ]);

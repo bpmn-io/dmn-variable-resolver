@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0zw4l66" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.15.2" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
-  <businessKnowledgeModel id="BusinessKnowledgeModel_1yhkda1" name="Business Knowledge Model">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0zw4l66" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <businessKnowledgeModel id="BKM_1" name="Business Knowledge Model">
     <encapsulatedLogic>
       <literalExpression id="LiteralExpression_1" />
     </encapsulatedLogic>
+    <knowledgeRequirement id="KnowledgeRequirement_1sg09j0">
+      <requiredKnowledge href="#BKM_2" />
+    </knowledgeRequirement>
   </businessKnowledgeModel>
   <decision id="Decision_1" name="Decision 1">
     <knowledgeRequirement id="KnowledgeRequirement_0e9kkq6">
-      <requiredKnowledge href="#BusinessKnowledgeModel_1yhkda1" />
+      <requiredKnowledge href="#BKM_1" />
     </knowledgeRequirement>
   </decision>
+  <businessKnowledgeModel id="BKM_2" name="BKM_2" />
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
-      <dmndi:DMNShape id="DMNShape_0wm9gcv" dmnElementRef="BusinessKnowledgeModel_1yhkda1">
+      <dmndi:DMNShape id="DMNShape_0wm9gcv" dmnElementRef="BKM_1">
         <dc:Bounds height="46" width="135" x="183" y="327" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_1fpwcj8" dmnElementRef="Decision_1">
@@ -21,6 +25,13 @@
       <dmndi:DMNEdge id="DMNEdge_1d5vw4e" dmnElementRef="KnowledgeRequirement_0e9kkq6">
         <di:waypoint x="251" y="327" />
         <di:waypoint x="250" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0cv6woa" dmnElementRef="BKM_2">
+        <dc:Bounds height="46" width="135" x="183" y="520" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ikwq66" dmnElementRef="KnowledgeRequirement_1sg09j0">
+        <di:waypoint x="251" y="520" />
+        <di:waypoint x="251" y="373" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
