@@ -2,6 +2,13 @@
 
 All notable changes to [@bpmn-io/dmn-variable-resolver](https://github.com/bpmn-io/dmn-variable-resolver) are documented here. We use [semantic versioning](http://semver.org/) for releases.
 
+## [0.6.0](https://github.com/bpmn-io/dmn-variable-resolver/compare/v0.5.0...v0.6.0) (2024-05-23)
+
+
+### Features
+
+* resolve knowledge requirement of BKM ([c99001e](https://github.com/bpmn-io/dmn-variable-resolver/commit/c99001ef57c278a15ce68e37e52848d79fac05bc)), closes [#15](https://github.com/bpmn-io/dmn-variable-resolver/issues/15)
+
 ## [0.5.0](https://github.com/bpmn-io/dmn-variable-resolver/compare/v0.4.0...v0.5.0) (2024-05-06)
 
 
