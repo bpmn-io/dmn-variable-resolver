@@ -81,7 +81,7 @@ describe('#resolveVariables', function() {
   });
 
 
-  it('should resolve required knowledge from Decision to BKM', async function() {
+  it('should resolve required knowledge from Decision to BKM with parameters', async function() {
 
     // given
     const parsed = await parse(RequiredKnowledgeDmn);
@@ -95,7 +95,21 @@ describe('#resolveVariables', function() {
     expect(variables).to.eql([
       {
         name: 'Business Knowledge Model',
-        origin
+        origin,
+        type: 'function',
+        params: [
+          {
+            name: 'first',
+            type: 'number'
+          },
+          {
+            name: 'second',
+            type: 'string'
+          },
+          {
+            name: 'no type'
+          }
+        ]
       }
     ]);
   });
