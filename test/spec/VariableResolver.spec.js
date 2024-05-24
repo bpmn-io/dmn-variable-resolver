@@ -31,7 +31,7 @@ describe('VariableResolver', function() {
       }
     };
 
-    [ 'drd', 'decisionTable', 'literalExpression' ].forEach(type => {
+    [ 'boxedExpression', 'drd', 'decisionTable', 'literalExpression' ].forEach(type => {
       options[type] = {
         additionalModules: [
           DmnVariableResolverModule
