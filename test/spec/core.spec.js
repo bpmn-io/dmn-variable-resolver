@@ -60,7 +60,7 @@ describe('#resolveVariables', function() {
   });
 
 
-  it('should resolve required decision outputs with types', async function() {
+  it('should resolve required decision single output with types', async function() {
 
     // given
     const parsed = await parse(RequiredDecisionDmn);
