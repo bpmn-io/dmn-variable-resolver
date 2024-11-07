@@ -22,7 +22,7 @@
     "chai": "^4.3.10",
     "cross-env": "^7.0.3",
     "css-loader": "^7.0.0",
-    "dmn-js": "^16.3.2",
+    "dmn-js": "^17.0.0",
     "dmn-moddle": "^10.0.0",
     "eslint": "^9.0.0",
     "eslint-plugin-bpmn-io": "^2.0.2",
