@@ -20,7 +20,7 @@
     "babel-loader": "^10.0.0",
     "babel-plugin-istanbul": "^7.0.0",
     "chai": "^4.3.10",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.0.0",
     "css-loader": "^7.0.0",
     "dmn-js": "^17.0.0",
     "dmn-moddle": "^11.0.0",
