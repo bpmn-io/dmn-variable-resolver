@@ -16,7 +16,7 @@
   "author": "Maciej Barelkowski <maciej.barelkowski@camunda.com>",
   "license": "MIT",
   "devDependencies": {
-    "@bpmn-io/feel-editor": "^1.4.0",
+    "@bpmn-io/feel-editor": "^2.0.0",
     "babel-loader": "^10.0.0",
     "babel-plugin-istanbul": "^7.0.0",
     "chai": "^4.3.10",
