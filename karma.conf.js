@@ -1,4 +1,3 @@
-/* eslint-env node */
 const coverage = process.env.COVERAGE;
 
 // configures browsers to run test against
