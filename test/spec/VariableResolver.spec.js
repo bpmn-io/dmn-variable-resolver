@@ -6,6 +6,9 @@ import SimpleDmn from '../fixtures/simple.dmn';
 
 import { singleStart } from '../TestHelper';
 
+import { expect } from 'chai';
+
+
 describe('VariableResolver', function() {
 
 

@@ -6,7 +6,10 @@ import RequiredKnowledgeDmn from '../fixtures/required-knowledge.dmn';
 import MissingNamesDmn from '../fixtures/missing-names.dmn';
 import FunctionDefinitionDmn from '../fixtures/function-definition.dmn';
 
+import { expect } from 'chai';
+
 import { resolveVariables } from '../../lib';
+
 
 describe('#resolveVariables', function() {
 
