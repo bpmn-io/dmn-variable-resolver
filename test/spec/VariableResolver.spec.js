@@ -26,12 +26,7 @@ describe('VariableResolver', function() {
     document.body.appendChild(container);
 
     const options = {
-      container: container,
-      common: {
-        keyboard: {
-          bindTo: document
-        }
-      }
+      container
     };
 
     [ 'boxedExpression', 'drd', 'decisionTable', 'literalExpression' ].forEach(type => {
