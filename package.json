@@ -10,6 +10,10 @@
     "lint": "eslint .",
     "all": "run-s lint test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpmn-io/dmn-variable-resolver.git"
+  },
   "files": [
     "lib"
   ],
