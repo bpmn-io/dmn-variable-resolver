@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" id="Definitions" namespace="http://example.com/dmn">
+  <itemDefinition id="addressType" name="Address">
+    <itemComponent name="city"><typeRef>string</typeRef></itemComponent>
+  </itemDefinition>
+  <itemDefinition id="applicantType" name="Applicant">
+    <itemComponent name="name"><typeRef>string</typeRef></itemComponent>
+    <itemComponent name="age"><typeRef>number</typeRef></itemComponent>
+    <itemComponent name="address"><typeRef>Address</typeRef></itemComponent>
+    <itemComponent name="previousAddresses" isCollection="true"><typeRef>Address</typeRef></itemComponent>
+    <itemComponent name="contact">
+      <itemComponent name="email"><typeRef>string</typeRef></itemComponent>
+    </itemComponent>
+    <itemComponent><typeRef>string</typeRef></itemComponent>
+  </itemDefinition>
+  <itemDefinition id="applicantsType" name="Applicants" isCollection="true">
+    <typeRef>Applicant</typeRef>
+  </itemDefinition>
+  <inputData id="Input" name="applicant">
+    <variable name="applicant" typeRef="Applicant" />
+  </inputData>
+  <decision id="Source" name="source">
+    <decisionTable id="SourceTable">
+      <output id="Output" name="result" typeRef="Applicant" />
+    </decisionTable>
+  </decision>
+  <decision id="Target" name="target">
+    <informationRequirement><requiredInput href="#Input" /></informationRequirement>
+    <informationRequirement><requiredDecision href="#Source" /></informationRequirement>
+    <literalExpression id="TargetExpression"><text>applicant.name</text></literalExpression>
+  </decision>
+  <businessKnowledgeModel id="Bkm" name="evaluate">
+    <encapsulatedLogic>
+      <formalParameter id="Parameter" name="applicants" typeRef="Applicants" />
+      <literalExpression id="Body"><text>applicants[1].name</text></literalExpression>
+    </encapsulatedLogic>
+  </businessKnowledgeModel>
+</definitions>
