@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" id="Definitions" name="Loan Services" namespace="urn:loan">
+  <inputData id="Age" name="age">
+    <variable name="age" typeRef="number" />
+  </inputData>
+  <inputData id="UntypedInput" name="untyped" />
+  <inputData id="Income" name="income">
+    <variable name="monthlyIncome" typeRef="number" />
+  </inputData>
+  <inputData id="NoName" />
+  <decision id="Score" name="creditScore">
+    <variable name="creditScore" typeRef="number" />
+    <literalExpression>
+      <text>700</text>
+    </literalExpression>
+  </decision>
+  <decision id="Eligibility" name="eligibility">
+    <informationRequirement>
+      <requiredInput href="#Age" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#Score" />
+    </informationRequirement>
+    <literalExpression>
+      <text>age &gt;= 18 and creditScore &gt;= 650</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="Complete" name="Loan Eligibility">
+    <outputDecision href="#Eligibility" />
+    <inputDecision href="#Score" />
+    <inputData href="#Age" />
+  </decisionService>
+  <decision id="Caller1" name="Caller 1">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#Complete" />
+    </knowledgeRequirement>
+    <literalExpression id="Body1">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="NoInputs" name="No Inputs">
+  </decisionService>
+  <decision id="Caller2" name="Caller 2">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#NoInputs" />
+    </knowledgeRequirement>
+    <literalExpression id="Body2">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="Untyped" name="Untyped">
+    <inputData href="#UntypedInput" />
+  </decisionService>
+  <decision id="Caller3" name="Caller 3">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#Untyped" />
+    </knowledgeRequirement>
+    <literalExpression id="Body3">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="VariableName" name="Variable Name">
+    <inputData href="#Income" />
+  </decisionService>
+  <decision id="Caller4" name="Caller 4">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#VariableName" />
+    </knowledgeRequirement>
+    <literalExpression id="Body4">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="Unnamed">
+    <inputData href="#Age" />
+  </decisionService>
+  <decision id="Caller5" name="Caller 5">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#Unnamed" />
+    </knowledgeRequirement>
+    <literalExpression id="Body5">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="Missing" name="Missing Input">
+    <inputData href="#missing" />
+  </decisionService>
+  <decision id="Caller6" name="Caller 6">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#Missing" />
+    </knowledgeRequirement>
+    <literalExpression id="Body6">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="External" name="External Input">
+    <inputData href="external.dmn#Age" />
+  </decisionService>
+  <decision id="Caller7" name="Caller 7">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#External" />
+    </knowledgeRequirement>
+    <literalExpression id="Body7">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="Invalid" name="Invalid Input">
+    <inputData href="#Bkm" />
+  </decisionService>
+  <decision id="Caller8" name="Caller 8">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#Invalid" />
+    </knowledgeRequirement>
+    <literalExpression id="Body8">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="UnnamedInput" name="Unnamed Input">
+    <inputData href="#NoName" />
+  </decisionService>
+  <decision id="Caller9" name="Caller 9">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#UnnamedInput" />
+    </knowledgeRequirement>
+    <literalExpression id="Body9">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <decisionService id="Unrelated" name="Other Service" />
+  <decision id="NoRequirement" name="No Requirement">
+    <literalExpression id="BodyNoRequirement">
+      <text>1</text>
+    </literalExpression>
+  </decision>
+  <businessKnowledgeModel id="Bkm" name="Evaluate Application">
+    <knowledgeRequirement>
+      <requiredKnowledge href="#Complete" />
+    </knowledgeRequirement>
+    <encapsulatedLogic>
+      <literalExpression id="BkmBody">
+        <text>1</text>
+      </literalExpression>
+    </encapsulatedLogic>
+  </businessKnowledgeModel>
+</definitions>
