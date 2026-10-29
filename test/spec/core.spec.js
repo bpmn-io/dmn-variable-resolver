@@ -35,6 +35,22 @@ describe('#resolveVariables', function() {
           { name: 'region', entries: [ { name: 'hemisphere', detail: 'string' } ] }
         ],
         origin: inputData
+      },
+      {
+        name: 'Tree',
+        detail: 'TreeType',
+        entries: [
+          { name: 'value', detail: 'string' },
+          { name: 'children', detail: 'TreeType', isList: true, entries: [] }
+        ],
+        origin: findElementById(parsed, 'InputData_0tree')
+      },
+      {
+        name: 'Formatter',
+        detail: 'FormatterType',
+        type: 'function',
+        params: [ { name: 'value', type: 'number' } ],
+        origin: findElementById(parsed, 'InputData_0fmt')
       }
     ]);
   });

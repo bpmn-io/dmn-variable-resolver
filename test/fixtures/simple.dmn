@@ -4,6 +4,12 @@
     <informationRequirement id="InformationRequirement_0kou3ny">
       <requiredInput href="#InputData_0wfh4a3" />
     </informationRequirement>
+    <informationRequirement id="InformationRequirement_0tree">
+      <requiredInput href="#InputData_0tree" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0fmt">
+      <requiredInput href="#InputData_0fmt" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_1jxp01i">
       <input id="Input_1">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -29,8 +35,27 @@
       </itemComponent>
     </itemComponent>
   </itemDefinition>
+  <itemDefinition id="ItemDefinition_0tree" name="TreeType">
+    <itemComponent id="ItemComponent_0value" name="value">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="ItemComponent_0children" name="children" isCollection="true">
+      <typeRef>TreeType</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="ItemDefinition_0fmt" name="FormatterType">
+    <functionItem id="FunctionItem_0fmt" outputTypeRef="string">
+      <parameters id="InformationItem_0fmtparam" name="value" typeRef="number" />
+    </functionItem>
+  </itemDefinition>
   <inputData id="InputData_0wfh4a3" name="Season">
     <variable id="InformationItem_0season" name="Season" typeRef="SeasonType" />
+  </inputData>
+  <inputData id="InputData_0tree" name="Tree">
+    <variable id="InformationItem_0tree" name="Tree" typeRef="TreeType" />
+  </inputData>
+  <inputData id="InputData_0fmt" name="Formatter">
+    <variable id="InformationItem_0fmt" name="Formatter" typeRef="FormatterType" />
   </inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
@@ -40,10 +65,26 @@
       <dmndi:DMNShape id="DMNShape_1jtbucx" dmnElementRef="InputData_0wfh4a3">
         <dc:Bounds height="45" width="125" x="187" y="337" />
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0tree" dmnElementRef="InputData_0tree">
+        <dc:Bounds height="45" width="125" x="337" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0fmt" dmnElementRef="InputData_0fmt">
+        <dc:Bounds height="45" width="125" x="487" y="337" />
+      </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_0c1euzc" dmnElementRef="InformationRequirement_0kou3ny">
         <di:waypoint x="250" y="337" />
         <di:waypoint x="250" y="200" />
         <di:waypoint x="250" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0tree" dmnElementRef="InformationRequirement_0tree">
+        <di:waypoint x="400" y="337" />
+        <di:waypoint x="300" y="200" />
+        <di:waypoint x="290" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0fmt" dmnElementRef="InformationRequirement_0fmt">
+        <di:waypoint x="550" y="337" />
+        <di:waypoint x="330" y="200" />
+        <di:waypoint x="320" y="180" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
