@@ -2,6 +2,15 @@
 
 All notable changes to [@bpmn-io/dmn-variable-resolver](https://github.com/bpmn-io/dmn-variable-resolver) are documented here. We use [semantic versioning](http://semver.org/) for releases.
 
+## Unreleased
+
+___Note:__ Yet to be released._
+
+## 0.8.0
+
+* `FEAT`: resolve decision service variables ([#69](https://github.com/bpmn-io/dmn-variable-resolver/pull/69))
+* `FEAT`: resolve custom item definition types, enabling autocomplete of their fields ([#68](https://github.com/bpmn-io/dmn-variable-resolver/pull/68), [bpmn-io/dmn-js#1020](https://github.com/bpmn-io/dmn-js/issues/1020))
+
 ## 0.7.1
 
 __Re-release with repository link in package.__
