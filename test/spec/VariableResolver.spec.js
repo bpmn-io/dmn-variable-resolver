@@ -67,6 +67,13 @@ describe('VariableResolver', function() {
     expect(variables).to.eql([
       {
         name: 'Season',
+        detail: 'SeasonType',
+        entries: [
+          { name: 'name', detail: 'string' },
+          { name: 'averageTemperature', detail: 'number' },
+          { name: 'months', detail: 'string', isList: true },
+          { name: 'region', entries: [ { name: 'hemisphere', detail: 'string' } ] }
+        ],
         origin: getBusinessObject(elementRegistry.get('InputData_0wfh4a3'))
       }
     ]);
