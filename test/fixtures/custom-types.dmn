@@ -16,6 +16,12 @@
   <itemDefinition id="applicantsType" name="Applicants" isCollection="true">
     <typeRef>Applicant</typeRef>
   </itemDefinition>
+  <itemDefinition id="formatterType" name="Formatter">
+    <functionItem outputTypeRef="string">
+      <parameters name="value" typeRef="number" />
+      <parameters />
+    </functionItem>
+  </itemDefinition>
   <inputData id="Input" name="applicant">
     <variable name="applicant" typeRef="Applicant" />
   </inputData>
