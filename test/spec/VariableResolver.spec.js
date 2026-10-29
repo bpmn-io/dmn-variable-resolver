@@ -75,6 +75,22 @@ describe('VariableResolver', function() {
           { name: 'region', entries: [ { name: 'hemisphere', detail: 'string' } ] }
         ],
         origin: getBusinessObject(elementRegistry.get('InputData_0wfh4a3'))
+      },
+      {
+        name: 'Tree',
+        detail: 'TreeType',
+        entries: [
+          { name: 'value', detail: 'string' },
+          { name: 'children', detail: 'TreeType', isList: true, entries: [] }
+        ],
+        origin: getBusinessObject(elementRegistry.get('InputData_0tree'))
+      },
+      {
+        name: 'Formatter',
+        detail: 'FormatterType',
+        type: 'function',
+        params: [ { name: 'value', type: 'number' } ],
+        origin: getBusinessObject(elementRegistry.get('InputData_0fmt'))
       }
     ]);
   });
