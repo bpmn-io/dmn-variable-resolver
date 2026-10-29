@@ -13,7 +13,25 @@
       <output id="Output_1" typeRef="string" />
     </decisionTable>
   </decision>
-  <inputData id="InputData_0wfh4a3" name="Season" />
+  <itemDefinition id="ItemDefinition_0season" name="SeasonType">
+    <itemComponent id="ItemComponent_0name" name="name">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="ItemComponent_0temp" name="averageTemperature">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="ItemComponent_0months" name="months" isCollection="true">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="ItemComponent_0region" name="region">
+      <itemComponent id="ItemComponent_0hemisphere" name="hemisphere">
+        <typeRef>string</typeRef>
+      </itemComponent>
+    </itemComponent>
+  </itemDefinition>
+  <inputData id="InputData_0wfh4a3" name="Season">
+    <variable id="InformationItem_0season" name="Season" typeRef="SeasonType" />
+  </inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <dmndi:DMNShape dmnElementRef="Decision_1">
