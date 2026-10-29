@@ -54,6 +54,24 @@ describe('custom type variables', function() {
     expect(variable.entries[0]).to.eql({ name: 'name', detail: 'string' });
   });
 
+  it('should resolve function items as function types', function() {
+
+    // given
+    element('Parameter').typeRef = 'Formatter';
+
+    // when
+    const variable = parameter();
+
+    // then
+    expect(variable).to.eql({
+      name: 'applicants',
+      origin: element('Parameter'),
+      detail: 'Formatter',
+      type: 'function',
+      params: [ { name: 'value', type: 'number' }, { name: 'param 2' } ]
+    });
+  });
+
   it('should resolve ID references', function() {
 
     // given
